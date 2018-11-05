@@ -6,6 +6,18 @@ import org.junit.Test;
 public class CreatorTest {
 
     @Test
+    public void create() {
+        Creator aCreator = new ACreatorImpl();
+        IProduct aProduct = aCreator.createProduct();
+
+        Creator bCreator = new BCreatorImpl();
+        IProduct bProduct = bCreator.createProduct();
+
+        System.out.println(aProduct.getName());
+        System.out.println(bProduct.getName());
+    }
+
+    @Test
     public void createAProduct() {
         Creator creator = new ACreatorImpl();
         IProduct product = creator.createProduct();
