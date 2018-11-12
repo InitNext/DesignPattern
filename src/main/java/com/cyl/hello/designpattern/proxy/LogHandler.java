@@ -1,0 +1,20 @@
+package com.cyl.hello.designpattern.proxy;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+
+public class LogHandler implements InvocationHandler {
+    private Object proxied;
+
+    LogHandler(Object proxied) {
+        this.proxied = proxied;
+    }
+
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("begin to invoke method:" + method.getName() + " params:" + Arrays.toString(args));
+        Object result = method.invoke(proxied, args);
+        System.out.println("invoke " + method.getName() + " end");
+        return result;
+    }
+}
