@@ -27,13 +27,13 @@ public class ObservableUser extends User {
         observable.deleteObservers();
     }
 
-    protected synchronized void setChanged() {
-        observable.setChanged();
-    }
-
-    protected synchronized void clearChanged() {
-        observable.clearChanged();
-    }
+    //protected synchronized void setChanged() {
+    //    observable.setChanged();
+    //}
+    //
+    //protected synchronized void clearChanged() {
+    //    observable.clearChanged();
+    //}
 
     public synchronized boolean hasChanged() {
         return observable.hasChanged();
